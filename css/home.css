@@ -1,0 +1,104 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 28, 2016, 1:22:50 AM
+    Author     : ChinhNguyen202
+*/
+a{
+    text-decoration: none;
+}
+a:hover, a:focus{
+    text-decoration: none;
+}
+.navbar-default{
+    background-color: #d71921;
+    border-radius: 0;
+}
+/*a:active{
+    background-color: #343a42;
+}*/
+.navbar-default .navbar-nav > .active{
+    color: #fff;
+    background: #343a42;
+}
+.navbar-default .navbar-nav > li > a{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover
+{
+/*    text-transform: uppercase;
+    font-weight: bold;*/
+    color: #fff;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background: #343a42; 
+}
+
+.navbar .nav > li > a, .navbar .nav > li > a:first-letter,
+.navbar .nav > li.current-menu-item > a, 
+.navbar .nav > li.current-menu-ancestor > a {                     
+    font-weight: bold;
+    font-size: 15px;
+}
+.navbar-collapse{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navbar-collapse ul li{
+    padding: 4px 8px;
+}
+.navbar-nav li:hover,.navbar-nav li:focus{
+    background: #343a42;
+    transition: 0.1s;
+    color: #fff;
+}
+.dropdown-menu {
+    background: #343a42;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    min-width: 250px;
+    color: #fff;
+}
+/*.dropdown,.dropdown-menu{
+    -moz-transition:    all 1000ms ease;
+    -webkit-transition: all 1000ms ease;
+    -o-transition:      all 1000ms ease;
+    -ms-transition:     all 1000ms ease;
+    transition:         all 1000ms ease;
+}*/
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+    transition: 1s;
+ }
+.dropdown-menu ul li{
+    padding:10px 0;
+}
+.dropdown-menu ul{
+    background: #343a42;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown-menu ul li a{
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: inherit;
+}
+.dropdown-menu ul li a i{
+    margin-right: 10px;
+}
+.dropdown-menu ul li:hover,.dropdown-menu ul li:focus{
+    background: #d71921;
+}
