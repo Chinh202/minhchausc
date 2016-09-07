@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/index.php</file>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/admin/admin_main.php</file>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/include/functions.php</file>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/admin/admin_header.php</file>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/admin/producer.php</file>
-            <file>file:/C:/xampp/htdocs/MinhChauSC/include/config.php</file>
+            <file>file:/C:/xampp/htdocs/minhchausc/include/functions.php</file>
+            <file>file:/C:/xampp/htdocs/minhchausc/process/producer_functions.php</file>
+            <file>file:/C:/xampp/htdocs/minhchausc/admin/producer.php</file>
+            <file>file:/C:/xampp/htdocs/minhchausc/process/admin.php</file>
         </group>
     </open-files>
 </project-private>

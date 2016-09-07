@@ -33,7 +33,8 @@ $result = execute_query($query);
                                 <td><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1em;"/></a></td>
                                 <td><a href="#" title="xóa thông tin"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1em;"/></a></td>
                             </tr>
-                        <?php }
+                            <?php
+                        }
                     }
                     ?>
                 </tbody>
@@ -47,17 +48,32 @@ $result = execute_query($query);
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Thêm mới nhà sản xuất</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success">Thêm</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                        </div>
+                        <form class="form-horizontal" role="form" method="post" action="../process/producer_functions.php?do=add_new">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center">Thêm mới nhà sản xuất</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 col-xs-4">Tên nhà sản xuất:</label>
+                                    <div class="col-sm-8 col-xs-8"><input type="text" required class="form-control" name="producer_name"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 col-xs-4">Xuất xứ:</label>
+                                    <div class="col-sm-8 col-xs-8"><input type="text" required class="form-control" name="country"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 col-xs-4">Ảnh đại diện:</label>
+                                    <div class="col-sm-8 col-xs-8"><input type="file" required name="img_url"/></div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" name="addnew">Thêm</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
