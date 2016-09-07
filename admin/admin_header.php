@@ -14,11 +14,11 @@ include_once '../include/config.php';
         <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
         <!--        <link href="../css/home.css" rel="stylesheet" type="text/css"/>-->
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/nav-js.js" type="text/javascript"></script> 
-        <script src="../js/sb-admin-2.js" type="text/javascript"></script>
-        <script src="../js/metisMenu.js" type="text/javascript"></script>
+        <script src="../javascript/jquery.js" type="text/javascript"></script>
+        <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../javascript/nav-js.js" type="text/javascript"></script> 
+        <script src="../javascript/sb-admin-2.js" type="text/javascript"></script>
+        <script src="../javascript/metisMenu.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="wrapper">

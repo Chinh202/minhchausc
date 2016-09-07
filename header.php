@@ -6,13 +6,12 @@
         <meta name="description" content="Cung cấp các giải pháp an ninh, giám sát, camera ...">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <title>MinhChauSC - Safe Your's House</title>
-        <?php include_once 'slider_head.php'; ?>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="css/home.css" rel="stylesheet" type="text/css"/>
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/nav-js.js" type="text/javascript"></script>                 
+        <script src="javascript//jquery.js" type="text/javascript"></script>
+        <script src="javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="javascript/nav-js.js" type="text/javascript"></script>                 
     </head>
     <body>
         <div class="wrapper">
