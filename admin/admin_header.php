@@ -41,12 +41,12 @@ include_once '../include/config.php';
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li><a href="#" data-toggle="collapse" data-target="#menuProduct" >Sản Phẩm <span class="caret"></span></a>
-                                <ul class="dropdown-menu-right collapse" id="menuProduct">
+                                <ul class="nav nav-second-level" id="menuProduct">
                                     <li><a href="#">Loại sản phẩm</a></li>
                                     <li><a href="#">Danh sách sản phẩm</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Hãng sản xuất</a></li>
+                            <li><a href="producer.php">Hãng sản xuất</a></li>
                             <li><a href="#">Các thông số kỹ thuật</a></li>
                             <li><a href="#">Bài Viết</a></li>                            
                             <li><a href="#">Thông tin Admin</a></li>                            
