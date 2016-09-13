@@ -29,7 +29,7 @@ $result = execute_query($query);
                                 <td><?php echo $row["producer_id"]; ?></td>
                                 <td><?php echo $row["producer_name"]; ?></td>
                                 <td><?php echo $row["country"]; ?></td>
-                                <td><?php echo $row["img_url"]; ?><img src="<?php echo "../imgs/".$row["img_url"];?>" style="width: 1.5em;" alt="anhdaidien"/></td>
+                                <td><ul class="enlarge"><?php echo $row["img_url"]; ?><li><img src="<?php echo "../imgs/".$row["img_url"];?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/".$row["img_url"];?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
                                 <td><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
                                 <td><a href="../process/producer_fn.php?id_del=<?php echo $row["producer_id"];?>" title="xóa thông tin" id="del" data-del="<?php echo $row["producer_id"]?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
                             </tr>

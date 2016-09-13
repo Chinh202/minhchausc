@@ -13,6 +13,7 @@ include_once '../include/config.php';
         <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/zoom_img.css" rel="stylesheet" type="text/css"/>
         <!--        <link href="../css/home.css" rel="stylesheet" type="text/css"/>-->
         <script src="../javascript/jquery.js" type="text/javascript"></script>
         <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
@@ -43,11 +44,11 @@ include_once '../include/config.php';
                             <li><a href="#" data-toggle="collapse" data-target="#menuProduct" >Sản Phẩm <span class="caret"></span></a>
                                 <ul class="nav nav-second-level" id="menuProduct">
                                     <li><a href="#">Loại sản phẩm</a></li>
-                                    <li><a href="#">Danh sách sản phẩm</a></li>
+                                    <li><a href="product_list.php">Danh sách sản phẩm</a></li>
                                 </ul>
                             </li>
                             <li><a href="producer.php">Hãng sản xuất</a></li>
-                            <li><a href="#">Các thông số kỹ thuật</a></li>
+                            <li><a href="specifications.php">Các thông số kỹ thuật</a></li>
                             <li><a href="#">Bài Viết</a></li>                            
                             <li><a href="#">Thông tin Admin</a></li>                            
                         </ul>
