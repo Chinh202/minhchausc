@@ -5,6 +5,9 @@ require_once '../include/functions.php';
 if (isset($_REQUEST['add_new'])) {
     add_new();
 }
+if (isset($_REQUEST['update'])) {
+    update();
+}
 if (isset($_GET['id_del'])) {
     delete();
 }
@@ -20,18 +23,19 @@ function add_new() {
     //die();
 }
 
-function pro_update() {
-    $name = post("name");
-    $price = post("price");
-    $product_id = post("product_id");
+function update() {
+    $id = post("id_update");
+    $specifications_name = post("specifications_name"); 
     execute_query("UPDATE `product` SET  `name`= '$name' `price` = '$price' WHERE product_id='$product_id'");
     redirect("../pro_list");
 }
 
 function delete() {
-    $id = get("id_del");   
+    $id = get("id_del");
+    $n = get("page");  
     execute_query("DELETE FROM `specifications` WHERE `specifications_id` = '$id'");
-    redirect("../admin/specifications.php");
+    echo "$n";
+    redirect("../admin/specifications.php?page=$n");
 }
 
 function do_login() {

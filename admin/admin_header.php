@@ -14,6 +14,7 @@ include_once '../include/config.php';
         <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
         <link href="../css/zoom_img.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/admin.css" rel="stylesheet" type="text/css"/>
         <!--        <link href="../css/home.css" rel="stylesheet" type="text/css"/>-->
         <script src="../javascript/jquery.js" type="text/javascript"></script>
         <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>

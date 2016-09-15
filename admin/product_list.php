@@ -8,6 +8,20 @@ $result1 = execute_query($query1);
 $result2 = execute_query($query2);
 $result3 = execute_query($query3);
 $result4 = execute_query($query4);
+$rowpage = 15;
+$n = get("page");
+if (!get("page")) {
+    $n = 1;
+}
+$offset = ($n - 1) * $rowpage;
+
+$rs_count = execute_query("SELECT COUNT(*) as cnt FROM product");
+$count_row = mysqli_fetch_assoc($rs_count);
+$total = $count_row["cnt"];
+
+$rs = execute_query("$query LIMIT $offset, $rowpage");
+$stt = 0;
+$total_page = ceil($total / $rowpage);
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -28,25 +42,23 @@ $result4 = execute_query($query4);
                 </thead>
                 <tbody>
                     <?php
-                    $stt = 0;
-                    if (mysqli_num_rows($result1) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $stt++;
-                            ?>
-                            <tr>
-                                <td><?php echo $stt; ?></td>
-                                <td><?php echo $row["product_id"]; ?></td>
-                                <td><?php echo $row["product_name"]; ?></td>
-                                <td><?php echo $row["product_price"]; ?></td>
-                                <td><?php echo $row["type_name"]; ?></td>
-                                <td><?php echo $row["producer_name"]; ?></td>
-                                <td><?php echo $row["production_year"]; ?></td>          
-                                <td><ul class="enlarge"><?php echo $row["img_url"]; ?><li><img src="<?php echo "../imgs/" . $row["img_url"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["img_url"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
-                                <td><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
-                                <td><a href="../process/producer_fn.php?id_del=<?php echo $row["producer_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["producer_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
-                            </tr>
-                            <?php
-                        }
+                    for ($i = 0; $i < mysqli_num_rows($rs); $i++) {
+                        $stt = $i + 1 + $offset;
+                        $row = mysqli_fetch_assoc($rs)
+                        ?>
+                        <tr>
+                            <td><?php echo $stt; ?></td>
+                            <td><?php echo $row["product_id"]; ?></td>
+                            <td><?php echo $row["product_name"]; ?></td>
+                            <td><?php echo $row["product_price"]; ?></td>
+                            <td><?php echo $row["type_name"]; ?></td>
+                            <td><?php echo $row["producer_name"]; ?></td>
+                            <td><?php echo $row["production_year"]; ?></td>          
+                            <td><ul class="enlarge"><?php echo $row["img_url"]; ?><li><img src="<?php echo "../imgs/" . $row["img_url"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["img_url"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
+                            <td><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
+                            <td><a href="../process/producer_fn.php?id_del=<?php echo $row["producer_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["producer_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
+                        </tr>
+                        <?php
                     }
                     ?>
                 </tbody>
@@ -107,7 +119,7 @@ $result4 = execute_query($query4);
                                     <div class="col-sm-9 col-xs-9"><input type="file" required name="img_url"/></div>
                                 </div>
                                 <div class="form-group">
-                                  <div class="col-sm-3 col-xs-3">Thông số kỹ thuật:</div> 
+                                    <div class="col-sm-3 col-xs-3">Thông số kỹ thuật:</div> 
                                     <div class="col-sm-9 col-xs-9">
                                         <select name="specifications_id" class="col-sm-4 col-xs-4 form-control">    
                                             <?php while ($row4 = mysqli_fetch_assoc($result4)) { ?>

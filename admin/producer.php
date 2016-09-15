@@ -10,7 +10,6 @@ $result = execute_query($query);
             <table class="table table-bordered table-striped">
                 <thead>
                 <th>STT</th>
-                <th>ID</th>
                 <th>Tên Nhà SX</th>
                 <th>Xuất Xứ</th>
                 <th>Ảnh đại diện</th>
@@ -26,7 +25,6 @@ $result = execute_query($query);
                             ?>
                             <tr>
                                 <td><?php echo $stt; ?></td>
-                                <td><?php echo $row["producer_id"]; ?></td>
                                 <td><?php echo $row["producer_name"]; ?></td>
                                 <td><?php echo $row["country"]; ?></td>
                                 <td><ul class="enlarge"><?php echo $row["img_url"]; ?><li><img src="<?php echo "../imgs/".$row["img_url"];?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/".$row["img_url"];?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
