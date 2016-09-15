@@ -19,7 +19,7 @@ $rs_count = execute_query("SELECT COUNT(*) as cnt FROM product");
 $count_row = mysqli_fetch_assoc($rs_count);
 $total = $count_row["cnt"];
 
-$rs = execute_query("$query LIMIT $offset, $rowpage");
+$rs = execute_query("$query1 LIMIT $offset, $rowpage");
 $stt = 0;
 $total_page = ceil($total / $rowpage);
 ?>
