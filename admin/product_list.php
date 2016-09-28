@@ -4,6 +4,7 @@ $query1 = "SELECT `product_id`,`product_name`,`product_price`,`production_year`,
 $query2 = "SELECT * FROM `product_type`";
 $query3 = "SELECT * FROM `producer`";
 $query4 = "SELECT * FROM `specifications`";
+$query5 = "SELECT * FROM `specifications`";
 $result1 = execute_query($query1);
 $result2 = execute_query($query2);
 $result3 = execute_query($query3);
@@ -119,29 +120,35 @@ $total_page = ceil($total / $rowpage);
                                     <div class="col-sm-9 col-xs-9"><input type="file" required name="img_url"/></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-3 col-xs-3">Thông số kỹ thuật:</div> 
-                                    <div class="col-sm-9 col-xs-9">
-                                        <select name="specifications_id" class="col-sm-4 col-xs-4 form-control">    
-                                            <?php while ($row4 = mysqli_fetch_assoc($result4)) { ?>
-                                                <option value="<?php echo $row4['specifications_id'] ?>">
-                                                    <?php echo $row4['specifications_name'] ?>
-                                                </option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
+                                    <div class="col-sm-12 col-xs-12">Thông số kỹ thuật:</div>                                                                     
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-3 col-xs-3">Mô tả:</div>                                    
-                                    <div class=" col-sm-9 col-xs-9">
-                                        <textarea name="specifications_des" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-3 col-xs-3"><button class="btn btn-success" type="button">Thêm Thông số</button></div>                                    
-                                    <div class=" col-sm-9 col-xs-9">                                        
-                                    </div>
-                                </div>
-
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Thông số Kỹ thuật</th>
+                                                <th>Mô tả</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="bd-sp">
+                                            <tr>
+                                                <td>
+                                                    <select name="specifications_id" class="col-sm-4 col-xs-4 form-control">    
+                                                        <?php while ($row4 = mysqli_fetch_assoc($result4)) { ?>
+                                                            <option value="<?php echo $row4['specifications_id'] ?>">
+                                                                <?php echo $row4['specifications_name'] ?>
+                                                            </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <textarea name="specifications_des" class="form-control col-sm-9 col-xs-9"></textarea>
+                                                </td>
+                                            </tr>                                        
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="btn btn-success" onclick="add_pro()">Thêm thông số</button>
+                                </div>                                                                                                
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="add_new">Thêm</button>
@@ -155,17 +162,30 @@ $total_page = ceil($total / $rowpage);
         </div>
     </div>
 </div>
-<!--<script>
-    function del() {
-        $.ajax({
-            url: "../process/producer_fn.php",
-            type: "post",
-            dateType: "text",
-            data: {
-                producer_id: $('#number').val()
-            },
-            success: 
-        });
+<script>
+//Thêm sản phẩm
+    function add_pro() {
+        var row = "<tr>";
+        row += "<td><select name='specifications_id' class='col-sm-4 col-xs-4 form-control'></td>";
+        row += "<?"+"php"+ " while ($row4 = mysqli_fetch_assoc($result4)) { ?>";
+        row += "<option value='<?"+"php echo $row4['specifications_id'] ?>'>";
+        row += "<?"+"php echo $row4['specifications_name'] ?>";
+        row += "</option>";
+        row += "<?"+"php } ?>";
+        row += "</select></td>";
+        row += "<td><textarea name='specifications_des' class='form-control col-sm-9 col-xs-9'></textarea></td>";
+        row += "</tr> ";
+
+        //Thực hiện chèn
+        $('#bd-sp').append(row);
     }
-</script>-->
+
+    function remove_pro(el) {
+        if (confirm('Xóa thông số ?')) {
+            $(el).parent().parent().remove();
+        }
+    }
+
+</script>
+
 <?php include_once 'admin_footer.php' ?>

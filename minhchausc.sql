@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-09-09 07:07:55
+Date: 2016-09-28 17:37:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -46,7 +46,7 @@ CREATE TABLE `producer` (
   `country` varchar(50) DEFAULT NULL,
   `img_url` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`producer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of producer
@@ -55,13 +55,14 @@ INSERT INTO `producer` VALUES ('1', 'Hikvision', 'China', null);
 INSERT INTO `producer` VALUES ('2', 'YunYang', 'China', null);
 INSERT INTO `producer` VALUES ('3', 'AOLIN', 'China', null);
 INSERT INTO `producer` VALUES ('4', 'Hyundai Telecom', 'China', null);
+INSERT INTO `producer` VALUES ('7', 'aqdeá', 'áda', 'galaxy-s7-edge_gallery_front_silver_s3.png');
 
 -- ----------------------------
 -- Table structure for product
 -- ----------------------------
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(50) NOT NULL,
   `product_name` varchar(100) DEFAULT NULL,
   `product_price` bigint(20) DEFAULT NULL,
   `type_id` int(11) NOT NULL,
@@ -84,13 +85,13 @@ CREATE TABLE `product` (
 -- ----------------------------
 DROP TABLE IF EXISTS `product_details`;
 CREATE TABLE `product_details` (
-  `product_id` int(11) NOT NULL,
+  `product_id` varchar(50) NOT NULL,
   `specifications_id` int(11) NOT NULL,
-  `specifications_des` varchar(200) DEFAULT NULL,
+  `specifications_des` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`product_id`,`specifications_id`),
   KEY `spe_id_fr` (`specifications_id`),
-  CONSTRAINT `pro_id_fr` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
-  CONSTRAINT `spe_id_fr` FOREIGN KEY (`specifications_id`) REFERENCES `specifications` (`specifications_id`)
+  CONSTRAINT `pro_fr` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  CONSTRAINT `spe_fr` FOREIGN KEY (`specifications_id`) REFERENCES `specifications` (`specifications_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -117,11 +118,38 @@ CREATE TABLE `product_type` (
 -- ----------------------------
 DROP TABLE IF EXISTS `specifications`;
 CREATE TABLE `specifications` (
-  `specifications_id` int(11) NOT NULL,
+  `specifications_id` int(11) NOT NULL AUTO_INCREMENT,
   `specifications_name` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`specifications_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `type_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`specifications_id`),
+  KEY `type_id_fk` (`type_id`),
+  CONSTRAINT `type_id_fk` FOREIGN KEY (`type_id`) REFERENCES `specification_type` (`type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of specifications
+-- ----------------------------
+INSERT INTO `specifications` VALUES ('2', 'Image Sensor', null);
+INSERT INTO `specifications` VALUES ('3', 'Signal System', null);
+INSERT INTO `specifications` VALUES ('4', 'Effective Pixels', null);
+INSERT INTO `specifications` VALUES ('5', 'Min. Illumination', null);
+INSERT INTO `specifications` VALUES ('6', 'Shutter Time', null);
+INSERT INTO `specifications` VALUES ('7', 'Lens', null);
+INSERT INTO `specifications` VALUES ('8', 'Lens Mount', null);
+INSERT INTO `specifications` VALUES ('9', 'Adjustment Range', null);
+INSERT INTO `specifications` VALUES ('10', 'Day& Night', null);
+INSERT INTO `specifications` VALUES ('11', 'Video Frame Rate', null);
+
+-- ----------------------------
+-- Table structure for specification_type
+-- ----------------------------
+DROP TABLE IF EXISTS `specification_type`;
+CREATE TABLE `specification_type` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of specification_type
 -- ----------------------------
