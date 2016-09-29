@@ -1,6 +1,7 @@
 <?php
 include_once 'admin_header.php';
 $query = "SELECT * FROM `specifications`";
+$query1 = "SELECT * FROM `specification_type`";
 $result = execute_query($query);
 $id = get("id");
 $rowpage = 10;
@@ -18,6 +19,21 @@ $rs = execute_query("$query LIMIT $offset, $rowpage");
 $stt = 0;
 $total_page = ceil($total / $rowpage);
 ?>
+<script language="javascript">
+    function load_ajax() {
+        $.ajax({
+            url: "../process/specifications_fn.php",
+            type: "post",
+            dateType: "text",
+            data: {
+                specifications_name: $('#sp').val()
+            },
+            success: function (result) {
+                $('#bd').html(result);
+            }
+        });
+    }
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10">
@@ -29,7 +45,7 @@ $total_page = ceil($total / $rowpage);
                 <th></th>
                 <th></th>
                 </thead>
-                <tbody>
+                <tbody id="bd">
                     <?php
                     if (mysqli_num_rows($result) > 0) {
                         for ($i = 0; $i < mysqli_num_rows($rs); $i++) {
@@ -81,7 +97,7 @@ $total_page = ceil($total / $rowpage);
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <form class="form-horizontal" role="form" method="post" action="../process/specifications_fn.php" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="post" action="../process/specifications_fn.php" enctype="multipart/form-data" name="add_new">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-center" id="title">Thêm Mới Thông Số Kỹ Thuật</h4>
@@ -90,13 +106,13 @@ $total_page = ceil($total / $rowpage);
                                 <input name="specifications_id" value="" style="visibility: hidden"/>
                                 <div class="form-group">                                    
                                     <div class="col-sm-3 col-xs-3">Tên :</div>
-                                    <div class="col-sm-9 col-xs-9"><input type="text" required class="form-control" name="specifications_name"/></div>                                    
+                                    <div class="col-sm-9 col-xs-9"><input type="text" required class="form-control" name="specifications_name" id="sp"/></div>                                    
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="add_new">Thêm</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal" id="submit">Đóng</button>
+                                <button type="button" class="btn btn-success" onclick="load_ajax();" data-dismiss="modal">Thêm</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                             </div>
                         </form>
                     </div>
@@ -105,12 +121,6 @@ $total_page = ceil($total / $rowpage);
         </div>
     </div>
 </div>
-<script>
-    function update() {
-        $("#Modalform").modal('show');
-        jQuery.noConflict(); 
-        $("#title").val("Sửa Tên Thông Số");
-        $("#submit").attr("name", "update");        
-    }
-</script>
+
+
 <?php include_once 'admin_footer.php'; ?>

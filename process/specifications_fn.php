@@ -16,23 +16,27 @@ function add_new() {
     // KHÔNG dung nhu the nay
     // $username = $_POST['username'];
     $specifications_name = post("specifications_name");
-
     execute_query("INSERT INTO `specifications` VALUES (NULL,'$specifications_name');");
-    redirect("../admin/specifications.php");
-
-    //die();
+    $query = "SELECT * FROM `specifications`";
+    $result = execute_query($query);
+    if (mysqli_num_rows($result) > 0) {
+        for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+            
+            echo $i;
+        }        
+    }
 }
 
 function update() {
     $id = post("id_update");
-    $specifications_name = post("specifications_name"); 
+    $specifications_name = post("specifications_name");
     execute_query("UPDATE `product` SET  `name`= '$name' `price` = '$price' WHERE product_id='$product_id'");
     redirect("../pro_list");
 }
 
 function delete() {
     $id = get("id_del");
-    $n = get("page");  
+    $n = get("page");
     execute_query("DELETE FROM `specifications` WHERE `specifications_id` = '$id'");
     echo "$n";
     redirect("../admin/specifications.php?page=$n");
