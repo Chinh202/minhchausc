@@ -6,12 +6,12 @@
         <meta name="description" content="Cung cấp các giải pháp an ninh, giám sát, camera ...">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <title>MinhChauSC - Safe Your's House</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <link href="css/home.css" rel="stylesheet" type="text/css"/>
-        <script src="javascript//jquery.js" type="text/javascript"></script>
-        <script src="javascript/bootstrap.min.js" type="text/javascript"></script>
-        <script src="javascript/nav-js.js" type="text/javascript"></script>                 
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/home.css" rel="stylesheet" type="text/css"/>
+        <script src="../javascript//jquery.js" type="text/javascript"></script>
+        <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../javascript/nav-js.js" type="text/javascript"></script>                 
     </head>
     <body>
         <div class="wrapper">
@@ -22,7 +22,7 @@
                 <div class="col-lg-4">
                     <div class="well text-center" style="margin:0px;padding: 0px">
                         <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
-                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="../imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
 
                     </div>                 
                 </div>             
@@ -89,13 +89,9 @@
                     </div>
                 </div>
             </div>
-<!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
+<!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <?php include_once 'slider_content.php'; ?>
-                    </div>
-                </div>
-            </div>
+                <img class="img-responsive" src="../imgs/product-page-cover.png"/>
+            </div> 
             <div class="container" id="main-content">
 
