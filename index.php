@@ -4,16 +4,16 @@ include_once 'header.php';
 <div class="row" style="padding: 15px 0px">
     <div class="col-lg-12" style="padding-left: 0">
         <div class="col-lg-3">
-            <a href="#"><img src="imgs/camera.png" alt="" class="img-responsive"/></a>
+            <a href="#"><img src="imgs/camera.png" alt="" class="img-responsive img-index"/></a>
         </div>
         <div class="col-lg-3">
-            <a href="#"><img src="imgs/chuonghinh-khoadien.jpg" alt="" class="img-responsive"/> </a>        
+            <a href="#" ><img src="imgs/chuonghinh-khoadien.jpg" alt="" class="img-responsive img-index"/> </a>        
         </div>
         <div class="col-lg-3">
-            <a href="#"><img src="imgs/kiem-soat-vao-ra.jpg" alt="" class="img-responsive"/></a>        
+            <a href="#" ><img src="imgs/kiem-soat-vao-ra.jpg" alt="" class="img-responsive img-index"/></a>        
         </div>
         <div class="col-lg-3" style="padding-right: 0">
-            <a href="#"><img src="imgs/bao-dong.jpg" alt="" class="img-responsive"/></a>        
+            <a href="#" ><img src="imgs/bao-dong.jpg" alt="" class="img-responsive img-index"/></a>        
         </div>
     </div>
 </div>
