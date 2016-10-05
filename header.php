@@ -89,13 +89,13 @@
                     </div>
                 </div>
             </div>
-<!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
+<!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <?php include_once 'slider_content.php'; ?>
                     </div>
                 </div>
-            </div>
+            </div>              
             <div class="container" id="main-content">
 

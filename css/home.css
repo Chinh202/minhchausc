@@ -102,6 +102,3 @@ a:hover, a:focus{
 .dropdown-menu ul li:hover,.dropdown-menu ul li:focus{
     background: #d71921;
 }
-.img-index:hover{
-    border: #d71921 solid 1px;
-}
