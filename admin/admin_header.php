@@ -44,7 +44,7 @@ include_once '../include/config.php';
                         <ul class="nav" id="side-menu">
                             <li><a href="#" data-toggle="collapse" data-target="#menuProduct" >Sản Phẩm <span class="caret"></span></a>
                                 <ul class="nav nav-second-level" id="menuProduct">
-                                    <li><a href="#">Loại sản phẩm</a></li>
+                                    <li><a href="product_type_list.php">Loại sản phẩm</a></li>
                                     <li><a href="product_list.php">Danh sách sản phẩm</a></li>
                                 </ul>
                             </li>

@@ -2,6 +2,37 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/minhchausc.sql</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/nbproject/project.xml</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/include/process.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/include/config.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/product_details.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/newhtml.html</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/producer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/site/product.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/slider_content.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/newhtml.html</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/site/footer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/product_list.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/process/specifications_fn.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/admin_main.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/slider_producer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/nbproject/project.properties</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/admin_footer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/footer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/admin_header.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/header.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/include/functions.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/result.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/process/admin.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/site/header.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/config.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/process/producer_fn.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/admin/login.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/Entities/product_controller.php</file>
+            <file>file:/Applications/XAMPP/htdocs/minhchausc/Entities/product.php</file>
+        </group>
     </open-files>
 </project-private>
