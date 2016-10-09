@@ -56,8 +56,7 @@ function add_new() {
 function update() {
     $type_id = get("id_upd");
     $type_name = post("type_name");
-    $url_img = post("url_img");
-    execute_query("UPDATE `product_type` SET  `type_name`= '$type_name' `$url_img` = '$url_img' WHERE type_id='$type_id'");
+    execute_query("UPDATE `product_type` SET  `type_name`= '$type_name' WHERE type_id='$type_id'");
     redirect("../admin/product_type_list.php");
 }
 
