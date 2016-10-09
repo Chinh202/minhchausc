@@ -37,9 +37,9 @@ $total_page = ceil($total / $rowpage);
                         <tr>
                             <td align="center"><?php echo $stt; ?></td>
                             <td><?php echo $row["type_name"]; ?></td>     
-                            <td><ul align="center" class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
-                            <td align="center"><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
-                            <td align="center"><a href="../process/producer_type_fn.php?id_del=<?php echo $row["type_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["type_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
+                            <td><ul align="center" class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
+                            <td align="center"><a data-toggle="modal" data-target="#myModalUpdate" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" onclick="updateProductType(<?php echo $row["type_id"] ?>);" style="width: 1.5em;"/></a></td>
+                            <td align="center"><a href="../process/product_type_fn.php?id_del=<?php echo $row["type_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["type_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
                         </tr>
                         <?php
                     }
@@ -47,10 +47,10 @@ $total_page = ceil($total / $rowpage);
                 </tbody>
             </table>
             <div class="col-lg-6">
-                <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Thêm Mới</button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#myModalInsert">Thêm Mới</button>
             </div>
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
+            <!-- Modal add new -->
+            <div id="myModalInsert" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-md">
 
                     <!-- Modal content-->
@@ -77,6 +77,42 @@ $total_page = ceil($total / $rowpage);
                         </form>
                     </div>
 
+                </div>
+            </div>
+            <!-- Modal edit -->
+            <div id="myModalUpdate" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-md">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <form id="formUpdate" class="form-horizontal" role="form" method="post" action="../process/product_type_fn.php?id_upd=" enctype="multipart/form-data">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center text-primary">Cập nhật loại sản phẩm</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="col-sm-3 col-xs-3">Loại sản phẩm:</div>                                    
+                                    <div class="col-sm-9 col-xs-9"><input type="text" required class="form-control" name="type_name"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-3 col-xs-3">Ảnh đại diện:</div>                                  
+                                    <div class="col-sm-9 col-xs-9"><input type="file" required name="url_img"/></div>
+                                </div>                                                                                              
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" name="add_new">Cập nhật</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </form>
+                    </div>
+                    <script type="text/javascript">
+                                function updateProductType(id_upd) {
+                                    alert(id_upd);
+                                    $("#formUpdate").attr("action", "../process/product_type_fn.php?id_upd=" + id_upd.toString());
+                                    alert($("#formUpdate").attr("action"));
+                                }
+                            </script>
                 </div>
             </div>
         </div>
