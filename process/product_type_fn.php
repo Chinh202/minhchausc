@@ -39,7 +39,8 @@ function add_new() {
                 echo "Tên file : " . $name . "<br />";
                 echo "Kiểu file : " . $type . "<br />";
                 echo "File size : " . $size;
-                execute_query("INSERT INTO `product_type` VALUES ('$type_name','$url_img');");
+                execute_query("INSERT INTO `product_type` (`type_id`, `type_name`, `url_img`) "
+                        . " SELECT MAX(`type_id`) + 1 , '$type_name','$url_img' FROM `product_type`");
                 redirect("../admin/product_type_list.php");
             }
         } else {

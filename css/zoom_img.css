@@ -10,7 +10,7 @@ ul.enlarge li{
 }
 ul.enlarge img{
 /*    background-color:#eae9d4;*/
-    padding: 6px;
+    padding: 0px;
     -webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
     -moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
     box-shadow: 0 0 6px rgba(132, 132, 132, .75);
@@ -22,7 +22,7 @@ ul.enlarge span{
     position:absolute;
     left: -9999px;
 /*    background-color:#eae9d4;*/
-    padding: 10px;
+    padding: 0px;
     font-family: 'Droid Sans', sans-serif;
     font-size:.9em;
     text-align: center; 
@@ -30,16 +30,16 @@ ul.enlarge span{
     -webkit-box-shadow: 0 0 20px rgba(0,0,0, .75);
     -moz-box-shadow: 0 0 20px rgba(0,0,0, .75);
     box-shadow: 0 0 20px rgba(0,0,0, .75);
-    -webkit-border-radius: 8px; 
-    -moz-border-radius: 8px; 
-    border-radius:8px;
+    -webkit-border-radius: 6px; 
+    -moz-border-radius: 6px; 
+    border-radius:6px;
 }
 ul.enlarge li:hover{
     z-index: 50;
     cursor:pointer;
 }
 ul.enlarge span img{
-    padding:2px;
+    padding:0px;
 /*    background:#ccc;*/
 }
 ul.enlarge li:hover span{ 

@@ -22,9 +22,9 @@ $total_page = ceil($total / $rowpage);
             <H2>Danh Sách Loại Sản Phẩm</H2>
             <table class="table table-bordered table-striped">
                 <thead>
-                <th>STT</th>
-                <th>Loại Sản Phẩm</th>
-                <th>Ảnh</th>
+                <th style="text-align: center">STT</th>
+                <th style="text-align: center">Loại Sản Phẩm</th>
+                <th style="text-align: center">Ảnh</th>
                 <th></th>
                 <th></th>
                 </thead>
@@ -35,12 +35,12 @@ $total_page = ceil($total / $rowpage);
                         $row = mysqli_fetch_assoc($rs)
                         ?>
                         <tr>
-                            <td><?php echo $stt; ?></td>
+                            <td align="center"><?php echo $stt; ?></td>
                             <td><?php echo $row["type_name"]; ?></td>     
-                            <td><ul class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
-                            <td><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
-                            <td><a href="../process/producer_type_fn.php?id_del=<?php echo $row["type_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["type_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
-                        </tr>img
+                            <td><ul align="center" class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
+                            <td align="center"><a href="#" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
+                            <td align="center"><a href="../process/producer_type_fn.php?id_del=<?php echo $row["type_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["type_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
+                        </tr>
                         <?php
                     }
                     ?>
