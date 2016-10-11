@@ -95,10 +95,10 @@ $total_page = ceil($total / $rowpage);
                                     <div class="col-sm-3 col-xs-3">Loại sản phẩm:</div>                                    
                                     <div class="col-sm-9 col-xs-9"><input id="productTypeNameUpdate" type="text" required class="form-control" name="type_name"/></div>
                                 </div>
-<!--                                <div class="form-group">
+                                <div class="form-group">
                                     <div class="col-sm-3 col-xs-3">Ảnh đại diện:</div>                                  
                                     <div class="col-sm-9 col-xs-9"><input type="file" required name="url_img"/></div>
-                                </div>                                                                                              -->
+                                </div>                                                                                              
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="add_new">Cập nhật</button>
