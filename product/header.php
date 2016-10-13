@@ -6,29 +6,34 @@
         <meta name="description" content="Cung cấp các giải pháp an ninh, giám sát, camera ...">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <title>MinhChauSC - Safe Your's House</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <link href="css/home.css" rel="stylesheet" type="text/css"/>
-        <script src="javascript//jquery.js" type="text/javascript"></script>
-        <script src="javascript/bootstrap.min.js" type="text/javascript"></script>
-        <script src="javascript/nav-js.js" type="text/javascript"></script>                 
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/home.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/zoom_img.css" rel="stylesheet" type="text/css"/>
+        <script src="../javascript//jquery.js" type="text/javascript"></script>
+        <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../javascript/nav-js.js" type="text/javascript"></script> 
+        <script src="../javascript/sb-admin-2.js" type="text/javascript"></script>
+        <script src="../javascript/metisMenu.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="wrapper">
-            <div class="container" style="padding:15px 0 15px;">
+            <div class="container" style="padding:15px 0 5px;">
                 <div class="col-lg-4">
-<!--                    <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>-->
+                    <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>
                 </div>                    
                 <div class="col-lg-4">
                     <div class="well text-center" style="margin:0px;padding: 0px">
                         <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
-                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="../imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
 
                     </div>                 
                 </div>             
             </div>
             <div class="container">
-                <div class="navbar navbar-default" style="background-color: #d71921;">
+                <div class="navbar navbar-default" style="margin-bottom: 5px">
                     <div class="navbar-header">
                         <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:#fff;">
                             <a>Menu</a>
@@ -93,9 +98,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?php include_once 'slider_content.php'; ?>
+                        <img src="../imgs/product-page-cover.png" class="img-responsive"/>
                     </div>
                 </div>
             </div>
             <div class="container" id="main-content">
-
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li><a href="#" data-toggle="collapse" data-target="#menuProduct" ><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Sản Phẩm</a>
+                                <ul class="nav nav-second-level" id="menuProduct">
+                                    <li><a href="product_type_list.php">Loại sản phẩm</a></li>
+                                    <li><a href="product_list.php">Danh sách sản phẩm</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="producer.php">Hãng sản xuất</a></li>
+                            <li><a href="specifications.php">Các thông số kỹ thuật</a></li>
+                            <li><a href="#">Bài Viết</a></li>                            
+                            <li><a href="#">Thông tin Admin</a></li>                            
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
