@@ -69,7 +69,7 @@ $total_page = ceil($total / $rowpage);
             </div>
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog modal-md">
 
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -162,30 +162,22 @@ $total_page = ceil($total / $rowpage);
         </div>
     </div>
 </div>
-<script>
+<script type="text/javascript">
 //Thêm sản phẩm
     function add_pro() {
-        var row = "<tr>";
-        row += "<td><select name='specifications_id' class='col-sm-4 col-xs-4 form-control'></td>";
-        row += "<?"+"php"+ " while ($row4 = mysqli_fetch_assoc($result4)) { ?>";
-        row += "<option value='<?"+"php echo $row4['specifications_id'] ?>'>";
-        row += "<?"+"php echo $row4['specifications_name'] ?>";
-        row += "</option>";
-        row += "<?"+"php } ?>";
-        row += "</select></td>";
-        row += "<td><textarea name='specifications_des' class='form-control col-sm-9 col-xs-9'></textarea></td>";
-        row += "</tr> ";
-
+        var row = '<tr><td><select name="specifications_id" class="col-sm-4 col-xs-4 form-control">'   
+                    + '<?' + 'php while ($row4 = mysqli_fetch_assoc($result4)) { ?>'
+                    + ' <option value='+'<?'+'php echo $row4["specifications_id"] ?>'+'>'
+                    +'<?'+'php echo $row4["specifications_name"] ?></option><?'+
+                    'php } ?></select></td><td><textarea name="specifications_des" '+
+                    'class="form-control col-sm-9 col-xs-9"></textarea></td></tr> ';
         //Thực hiện chèn
         $('#bd-sp').append(row);
     }
-
     function remove_pro(el) {
         if (confirm('Xóa thông số ?')) {
             $(el).parent().parent().remove();
         }
     }
-
 </script>
-
 <?php include_once 'admin_footer.php' ?>

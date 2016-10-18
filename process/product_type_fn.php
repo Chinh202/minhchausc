@@ -30,7 +30,7 @@ function add_new() {
         execute_query("INSERT INTO `product_type` (`type_id`, `type_name`, `url_img`) "
                         . " SELECT MAX(`type_id`) + 1 , '$type_name','$url_img' FROM `product_type`");
     }
-//    redirect("../admin/product_type_list.php");
+    redirect("../admin/product_type_list.php");
 }
 
 function update() {
@@ -51,7 +51,11 @@ function update() {
         else if ($url_img == "-3") {
             echo "File không được lớn hơn 1mb";
         }
+        else if ($url_img == "-9") {
+            echo "File đã tồn tại";
+        }
         else {
+            echo("aaasasasa");
             deleteImg($type_id);
             execute_query("UPDATE `product_type` SET  `type_name`= '$type_name', `url_img`='$url_img' WHERE type_id='$type_id'");
        }
@@ -69,24 +73,26 @@ function delete() {
 function insertImg() {
     $val =  $_FILES["url_img"]["name"];
     $url_img = normalizeChars($val);
-    $type_img = $_FILES['url_img']['type'];
     if ($_FILES['url_img']['name'] != NULL) { // Đã chọn file
         // Tiến hành code upload file
         if ($_FILES['url_img']['type'] == "image/jpeg" || $_FILES['url_img']['type'] == "image/png" || $_FILES['url_img']['type'] == "image/gif") {
-            // là file ảnh
-            // Tiến hành code upload 
-            if ($_FILES['url_img']['size'] > 1048576) {
-                return "-3";//echo "File không được lớn hơn 1mb";
-            } else {
-                // file hợp lệ, tiến hành upload
-                $path = "../imgs/"; // file sẽ lưu vào thư mục data
-                $tmp_name = $_FILES['url_img']['tmp_name'];
-                $name = $url_img;
-                $type = $type_img;
-                $size = $_FILES['url_img']['size'];
-                // Upload file
-                move_uploaded_file($tmp_name, $path . $name);
-                return $url_img;
+            // là file ảnh //check file exists
+            if (file_exists("../imgs/".$url_img) == 1){
+                return "-9";
+            }
+            else {
+                // Tiến hành code upload 
+                if ($_FILES['url_img']['size'] > 1048576) {
+                    return "-3";//echo "File không được lớn hơn 1mb";
+                } 
+                else {
+                    // file hợp lệ, tiến hành upload
+                    $path = "../imgs/"; // file sẽ lưu vào thư mục data
+                    $tmp_name = $_FILES['url_img']['tmp_name'];
+                    // Upload file
+                    move_uploaded_file($tmp_name, $path . $url_img);
+                    return $url_img;
+                }
             }
         } else {
             // không phải file ảnh
