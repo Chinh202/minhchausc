@@ -15,6 +15,7 @@ a:hover, a:focus{
 }
 .navbar-default{
     border-radius: 0;
+    background-color: #d71921;
 }
 /*a:active{
     background-color: #343a42;
@@ -103,4 +104,22 @@ a:hover, a:focus{
 }
 .img-index:hover{
     border: #d71921 solid 1px;
+}
+.sidebar{
+    position: relative;
+    width: 100%;
+}
+div.main-content{
+    padding: 0;
+}
+div.sidebar{
+    background-color: #fff;
+    padding-left: 0;
+}
+div.menu-left{
+    padding-left: 0;
+}
+#side-menu li{
+    padding: 0;
+    line-height: 2em;
 }

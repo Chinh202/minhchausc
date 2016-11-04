@@ -1,5 +1,6 @@
 <?php ?>
-
+</div>
+</div>
 </div>
 <div class="container"> 
     <div class="col-lg-12" style="text-align: center;background-color: #d71921">        

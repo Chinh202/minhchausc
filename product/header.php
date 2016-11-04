@@ -7,11 +7,11 @@
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <title>MinhChauSC - Safe Your's House</title>
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/home.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>        
         <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
         <link href="../css/zoom_img.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/home.css" rel="stylesheet" type="text/css"/>
         <script src="../javascript//jquery.js" type="text/javascript"></script>
         <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
         <script src="../javascript/nav-js.js" type="text/javascript"></script> 
@@ -103,6 +103,9 @@
                 </div>
             </div>
             <div class="container" id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-3 menu-left">
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
@@ -120,3 +123,4 @@
                     </div>
                     <!-- /.sidebar-collapse -->
                 </div>
+                        </div>
