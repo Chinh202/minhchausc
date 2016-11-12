@@ -10,4 +10,9 @@
 <!--</div>-->
 </div>
 </body>
+<script>
+    $(document).ready(function () {
+            initNav( "#555", "#fff");            
+        });
+</script>
 </html>
