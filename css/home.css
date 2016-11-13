@@ -16,6 +16,9 @@ body{
     font-family: Arial,sans-serif;
     font-weight: 400;
     font-size: 14px;
+}.container{
+    padding-left: 5px;
+    padding-right: 5px;
 }
 a{
     text-decoration: none;
@@ -260,4 +263,14 @@ div.menu-left{
 }
 .menu-top-menu-header li a{
     color: #858585;
+}
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
