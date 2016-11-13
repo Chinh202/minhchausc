@@ -9,23 +9,63 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="css/home.css" rel="stylesheet" type="text/css"/>
-        <script src="javascript//jquery.js" type="text/javascript"></script>
+        <link href="css/slick.css" rel="stylesheet" type="text/css"/>
+        <link href="css/slick-theme.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="css/slider.css" rel="stylesheet" type="text/css"/>-->
+        <script src="javascript/jquery.js" type="text/javascript"></script>
+        <script src="javascript/jquery-1.11.3.min.js" type="text/javascript"></script>
         <script src="javascript/bootstrap.min.js" type="text/javascript"></script>
-        <script src="javascript/nav-js.js" type="text/javascript"></script>                 
+<!--        <script src="javascript/nav-js.js" type="text/javascript"></script> -->
+        <script src="javascript/slick.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="wrapper">
-            <div class="container" style="padding:15px 0 15px;">
-                <div class="col-lg-4">
-<!--                    <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>-->
-                </div>                    
-                <div class="col-lg-4">
-                    <div class="well text-center" style="margin:0px;padding: 0px">
-                        <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
-                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+            <section class="menu-top-heder" style="">
+                <div class="container" >
+                    <div>
+                        <div class="col-md-6 col-xs-6 user-login">
+                            <span class="hidden-xs">
+                                Xin chào ! quý khách có thể
+                            </span>
+                            <a href="#" style="color: red">đăng nhập hoặc đăng ký</a>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <ul class="menu-top-menu-header" style="list-style-type: none;">
+                                <li><a href="#">Download báo giá</a></li>
+                                <li><a href="#">Tuyển dụng</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-                    </div>                 
-                </div>             
+                </div>
+            </section>
+            <div class="container" style="padding:15px 0 15px;">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>
+                    </div>                    
+                    <div class="col-lg-4">
+                        <div class="well text-center" style="margin:0px;padding: 0px">
+                            <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
+                            <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+
+                        </div>                 
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="input-group" style="float: right"> 
+                            <div class="input-group" style="padding-right: 15px">
+                                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2"> 
+                                    <button class="btn btn-secondary input-group-addon" id="basic-addon2" type="button" style="padding: 0">
+                                        <i class="fa fa-search" style="padding: 0"></i>
+                                    </button>                                       
+                                </span>                             
+                            </div>                           
+                        </div>                        
+                    </div>
+                </div>
+
             </div>
             <div class="container">
                 <div class="navbar navbar-default" style="background-color: #d71921;">

@@ -1,6 +1,3 @@
 RewriteEngine On
 
 
-
-RewriteRule ^trang-chu.html$ index.php
-RewriteRule ^san-pham.php$ product/pr_hikvision.php

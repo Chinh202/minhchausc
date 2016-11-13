@@ -1,7 +1,7 @@
 <?php
-
+include_once '../include/functions.php';
+include_once '../include/config.php';
 class breadcrumb {
-
     private $breadcrumb;
     private $separator = '';
     private $domain = 'http://localhost:82/MinhChauSC';
@@ -28,8 +28,8 @@ class breadcrumb {
         }
         return $this->breadcrumb;
     }
-
 }
+
 ?>
 <html>
     <head>
@@ -38,17 +38,17 @@ class breadcrumb {
         <meta name="description" content="Cung cấp các giải pháp an ninh, giám sát, camera ...">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <title>MinhChauSC - Safe Your's House</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>        
-        <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        <link href="css/metisMenu.css" rel="stylesheet" type="text/css"/>
-        <link href="css/zoom_img.css" rel="stylesheet" type="text/css"/>
-        <link href="css/home.css" rel="stylesheet" type="text/css"/>
-        <script src="javascript//jquery.js" type="text/javascript"></script>
-        <script src="javascript/bootstrap.min.js" type="text/javascript"></script>
-        <script src="javascript/nav-js.js" type="text/javascript"></script> 
-        <script src="javascript/sb-admin-2.js" type="text/javascript"></script>
-        <script src="javascript/metisMenu.js" type="text/javascript"></script>
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/font-awesome/../css/font-awesome.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/metisMenu.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/zoom_img.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/home.css" rel="stylesheet" type="text/css"/>
+        <script src="../javascript/jquery.js" type="text/javascript"></script>
+        <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../javascript/nav-js.js" type="text/javascript"></script> 
+        <script src="../javascript/sb-admin-2.js" type="text/javascript"></script>
+        <script src="../javascript/metisMenu.js" type="text/javascript"></script>
         <script>
             function initNav(nav_colorTextActive, nav_colorTextNornal) {
 //                $(".nav a").on("click", function () {
@@ -73,12 +73,12 @@ class breadcrumb {
         <div class="wrapper">
             <div class="container" style="padding:15px 0 5px;">
                 <div class="col-lg-4">
-                    <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>
+                    <img src="../imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>
                 </div>                    
                 <div class="col-lg-4">
                     <div class="well text-center" style="margin:0px;padding: 0px">
                         <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
-                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+                        <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="../imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
 
                     </div>                 
                 </div>             
@@ -145,11 +145,11 @@ class breadcrumb {
                     </div>
                 </div>
             </div>
-<!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
+<!--                <img src="../imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <img src="imgs/product-page-cover.png" class="img-responsive"/>
+                        <img src="../imgs/product-page-cover.png" class="img-responsive"/>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@ class breadcrumb {
                 <ul class="breadcrumb">
                     <?php
                     $breadcrumb = new breadcrumb();
-                    echo $breadcrumb->build(array('Sản phẩm' => 'san-pham.php', 'PHP Breadcrumb' => 'php-breadcrumb.html'));
+                    echo $breadcrumb->build(array('Sản phẩm' => 'product/pr_hikvision.php', 'PHP Breadcrumb' => 'php-breadcrumb.html'));
                     ?>                    
                 </ul>
             </div>            
@@ -168,6 +168,7 @@ class breadcrumb {
                         <div class="col-lg-3 menu-left">
                             <div class="navbar-default sidebar" role="navigation">
                                 <div class="sidebar-nav navbar-collapse">
+                                    <h3 class="head-text text-center">Sản Phẩm</h3>
                                     <ul class="nav ul-nav" id="side-menu">
                                         <li class="li-menu"><a href="#" data-toggle="collapse" data-target="#menuProduct" class="top-li"></span> Sản Phẩm</a>
                                             <ul class="nav nav-second-level" id="menuProduct">

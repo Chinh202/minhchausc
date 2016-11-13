@@ -28,6 +28,44 @@ include_once 'header.php';
         <li class="slider"><img src="imgs/yunyang-265x75.jpg" alt=""/></li>
     </ul>
 </div>-->
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12 heroSlider-fixed">
+            <div class="overlay">
+            </div>
+            <!-- Slider -->
+            <div class="slider autoplay">
+                <div>
+                    <img src="imgs/aolin-logo-265x75.jpg" alt=""/>
+                </div>
+                <div>
+                    <img src="imgs/Honeywell-logo-265x75.png" alt=""/>
+                </div>
+                <div>
+                    <img src="imgs/hyundai-logo-265x75.jpg" alt=""/>
+                </div>
+                <div>
+                    <img src="imgs/logo-hikvision-265x75.png" alt=""/>
+                </div>
+                <div>
+                    <img src="imgs/risco-logo-265x75.jpg" alt=""/>
+                </div>
+                <div>
+                    <img src="imgs/yunyang-265x75.jpg" alt=""/>
+                </div>                
+            </div>
+            <!-- control arrows -->
+<!--            <div class="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </div>
+            <div class="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </div>-->
+
+        </div>
+    </div>
+</div>
 <?php
 include_once 'footer.php';
 ?>

@@ -244,3 +244,20 @@ div.menu-left{
     padding: 10px 10px 10px 32px;
     text-decoration: none;
 }
+.menu-top-heder{
+    background-color: #f8f8f8;padding: 8px 0;font-size: 12px;border-bottom: #ebebeb solid 1px;
+}
+.user-login{
+    color: #858585;
+}
+.menu-top-menu-header{
+    text-align: right;
+    margin: 0;    
+}
+.menu-top-menu-header li{
+    display: inline;
+    padding-left: 10px;
+}
+.menu-top-menu-header li a{
+    color: #858585;
+}
