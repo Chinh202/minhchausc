@@ -81,7 +81,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">TRANG CHỦ</a></li>
+                            <li><a href="http://localhost:82/MinhChauSC/index.php">TRANG CHỦ</a></li>
                             <li class="dropdown"><a href="#bootstrap" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span class="caret"></span></a>
                                 <div class="dropdown-menu col-lg-12">
                                     <ul>
@@ -90,7 +90,7 @@
                                     </ul>
                                 </div>                                
                             </li>
-                            <li class="dropdown"><a href="#bootstrap" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <span class="caret"></span></a>
+                            <li class="dropdown"><a href="http://localhost:82/MinhChauSC/product/pr_hikvision.php" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <span class="caret"></span></a>
                                 <div class="dropdown-menu col-lg-12">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-angle-right"></i>Camera Hikvision</a></li>

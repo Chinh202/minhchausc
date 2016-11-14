@@ -84,6 +84,9 @@ a:hover, a:focus{
     min-width: 250px;
     color: #fff;
 }
+.dropdown:hover,.dropdown:focus,.dropdown:active{
+    background-color: #343a42;
+}
 /*.dropdown,.dropdown-menu{
     -moz-transition:    all 1000ms ease;
     -webkit-transition: all 1000ms ease;
@@ -264,13 +267,55 @@ div.menu-left{
 .menu-top-menu-header li a{
     color: #858585;
 }
+.nav-tabs li i{
+    padding-right: 5px;
+}
+.nav-tabs li a{
+    margin: 0;
+    color: #656565;
+    text-transform: uppercase;
+}
 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
     *display:inline; /* ie7 fix */
-     zoom:1; /* hasLayout ie7 trigger */
+    zoom:1; /* hasLayout ie7 trigger */  
+    background-color: #ebebeb;
 }
-
+.nav-tabs > li a:hover{
+    background-color: #bebebe;
+} 
+.nav-tabs > li a:focus{
+    background-color: #f3f3f3;
+}
+.nav-tabs > li.active a,.nav-tabs > li.active a:hover,.nav-tabs > li.active a:focus{
+    background-color: #f8f8f8;
+    color: #d71921;
+}
+.tab-content{
+    background-color: #f8f8f8;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.nav-tabs > li >a{
+    border: none;
+    border-radius: 0;
+    background-color: #f3f3f3;
+}
 .nav-tabs, .nav-pills {
     text-align:center;
+}
+.tab-section{
+    padding: 0;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+.tab-all{
+    width: 100%;
+    text-align: center;
+}
+.tab-child{
+    width: 50%;
+display: inline-block;  
+box-sizing: border-box;
 }

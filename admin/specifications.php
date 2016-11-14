@@ -121,6 +121,4 @@ $total_page = ceil($total / $rowpage);
         </div>
     </div>
 </div>
-
-
 <?php include_once 'admin_footer.php'; ?>
