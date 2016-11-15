@@ -43,7 +43,7 @@
             <div class="container" style="padding:15px 5px;">
                 <div class="row">
                     <div class="col-lg-4">
-                        <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="height: 85px"/>
+                        <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="min-height: 85px"/>
                     </div>                    
                     <div class="col-lg-4">
                         <div class="well text-center" style="margin:0px;padding: 0px;height: 85px">
@@ -134,7 +134,7 @@
                 </div>
             </div>
 <!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
-            <div class="container">
+            <div class="container slider-home">
                 <div class="row">
                     <div class="col-lg-12">
                         <?php include_once 'slider_content.php'; ?>

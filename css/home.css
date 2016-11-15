@@ -10,6 +10,10 @@ and open the template in the editor.
 *{
     box-sizing: border-box;
 }
+ul,ol{
+    margin: 0;
+    padding: 0;
+}
 body{
     background-color: #fff;
     color: #111;
@@ -267,6 +271,9 @@ div.menu-left{
 .menu-top-menu-header li a{
     color: #858585;
 }
+.slider-home{
+    margin-bottom: 15px;
+}
 .nav-tabs li i{
     padding-right: 5px;
 }
@@ -282,24 +289,27 @@ div.menu-left{
     zoom:1; /* hasLayout ie7 trigger */  
     background-color: #ebebeb;
 }
-.nav-tabs > li a:hover{
-    background-color: #bebebe;
-} 
-.nav-tabs > li a:focus{
-    background-color: #f3f3f3;
-}
-.nav-tabs > li.active a,.nav-tabs > li.active a:hover,.nav-tabs > li.active a:focus{
-    background-color: #f8f8f8;
-    color: #d71921;
-}
-.tab-content{
-    background-color: #f8f8f8;
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-}
 .nav-tabs > li >a{
     border: none;
     border-radius: 0;
     background-color: #f3f3f3;
+}
+.nav-tabs > li a:hover{
+    background-color: #d6d6d6;
+} 
+.nav-tabs > li a:focus{
+    background-color: #f8f8f8;
+}
+.nav-tabs > li.active a,.nav-tabs > li.active a:hover,.nav-tabs > li.active a:focus{
+    background-color: #f9f9f9;
+    color: #d71921;
+}
+.tab-content, .tab-content .tab-pane{
+    background-color: #f9f9f9;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.tab-pane{
+    padding: 0px 15px;
 }
 .nav-tabs, .nav-pills {
     text-align:center;
@@ -318,4 +328,62 @@ div.menu-left{
     width: 50%;
 display: inline-block;  
 box-sizing: border-box;
+}
+.green{
+    color: #499e45;
+}
+.red{
+    color: #d71921;
+}
+.contact{
+    list-style-type: none;
+}
+.contact-user{
+    font-size: 1.2em;    
+}
+.contact li{
+    display: inline;
+    float: left;
+    padding-right: 10px;
+}
+.contact >li >a{
+    display: block;
+}
+.contact-all{
+    border-right: #ccc solid 1px;
+    margin:15px 0px;
+}
+.contact-add{
+    margin:15px 0px;
+}
+.address h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.tel{
+    font-weight: bold;
+    color: red;
+}
+.effect i{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #d71921;
+    height: 26px;
+    line-height: 26px;
+    margin: 0 10px 0 0;
+    text-align: center;
+    width: 26px;
+}
+.w-title h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+.contact-bottom{
+    text-align: left;
+}
+.nav-bottom{
+    border-top: #ebebeb solid 1px;
 }
