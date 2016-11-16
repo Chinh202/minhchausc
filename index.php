@@ -448,7 +448,10 @@ include_once 'header.php';
                 </div>
                 <div>
                     <img src="imgs/yunyang-265x75.jpg" alt=""/>
-                </div>                
+                </div>
+                <div>
+                    <img src="imgs/default.png" alt="" style="width: 50%"/>
+                </div> 
             </div>
             <!-- control arrows -->
             <!--            <div class="prev">

@@ -326,8 +326,8 @@ div.menu-left{
 }
 .tab-child{
     width: 50%;
-display: inline-block;  
-box-sizing: border-box;
+    display: inline-block;  
+    box-sizing: border-box;
 }
 .green{
     color: #499e45;
@@ -383,7 +383,59 @@ box-sizing: border-box;
 }
 .contact-bottom{
     text-align: left;
+    margin: 30px 0;
+}
+.contact-bottom a{
+    color: #fff;
 }
 .nav-bottom{
     border-top: #ebebeb solid 1px;
 }
+.autoplay img{
+    width: 80%;
+}
+.dangky img{
+    width: 60%;
+}
+.help-contact span{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-weight: bold;
+    color: #656565;
+}
+/*.btn{
+    padding: 8px 12px;
+}
+.btn-default{
+    background-color: #343a42;
+    color: #fff;
+}*/
+/*.form-control{
+    padding: 8px 12px;
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    margin-left: 0px;
+}
+.input-group-btn .btn{
+    position: relative;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.btn{
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.btn-default{
+    background-color: #3e3e40;
+}
+.btn{
+    padding: 8px 12px;
+}
+.fa{
+    transform: translate(0, 0);
+}*/

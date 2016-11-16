@@ -40,29 +40,41 @@
 
                 </div>
             </section>
-            <div class="container" style="padding:15px 5px;">
+            <div class="container" style="padding:20px 5px;">
                 <div class="row">
                     <div class="col-lg-4">
                         <img src="imgs/minhchausc_logo.png" alt="" class="img-responsive" style="min-height: 85px"/>
                     </div>                    
-                    <div class="col-lg-4">
+                    <div class="col-lg-5">
                         <div class="well text-center" style="margin:0px;padding: 0px;height: 85px">
-                            <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Kỹ Thuật</h4>
-                            <p style="margin: 0"><i class="fa fa-phone" style="color:#00AE42;font-size: 14px"></i><a style="font-weight: bold;color:#d71921;text-transform: uppercase;padding: 0;font-size: 18px"> 0988 098 945</a><a title=" " href="skype:vinhcv?chat" class="btn"><img src="imgs/chatbutton_32px.png" alt="Talk with me via Skype" class="img-responsive" style="height: 20px;"/></a></p>                                                        
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h4 style="font-weight: bold;color:#d71921;text-transform: uppercase">Hỗ Trợ Khách hàng</h4>                                                                        
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6 help-contact">
+                                        <p style="margin: 0"><span>Di động: </span><a href="tel:0988 098 945" class="tel" style="font-size: 1.2em"><i class="fa fa-phone" style="color:#00AE42;font-size: 1em"></i> 0988 098 945</a></p>                                                        
+                                    </div>
+                                    <div class="col-lg-6 help-contact">
+                                        <p style="margin: 0"><span>Cố định: </span><a href="tel:0988 098 945" class="tel" style="font-size: 1.2em"><i class="fa fa-phone" style="color:#00AE42;font-size: 1em"></i> 0988 098 945</a></p>                                                        
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>                 
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="input-group" style="float: right"> 
-                            <form style="margin: 0">
-                                <div class="input-group" style="padding:15px 15px">                                
-                                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
-                                    <span class="input-group-addon" id="basic-addon2" style="padding: 0"> 
-                                        <button class="btn btn-secondary input-group-addon" id="basic-addon2" type="button" style="padding:6px 12px;border: none;float: left">
-                                            <i class="fa fa-search" style="padding-right: 0px"></i>
-                                        </button>                                       
-                                    </span>                                                            
-                                </div>  
+                            <form style="margin: 0">                                 
+                                <div class = "input-group">
+                                    <input type = "text" class = "form-control">
+                                    <span class = "input-group-btn">
+                                        <button class = "btn btn-default" type = "button" style="background-color: #343a42;color: #fff">
+                                            <i class="fa fa-search" style="padding: 3px"></i>
+                                        </button>
+                                    </span>
+
+                                </div><!-- /input-group -->
                             </form>
                         </div>                        
                     </div>
@@ -72,8 +84,7 @@
             <div class="container">
                 <div class="navbar navbar-default" style="background-color: #d71921;margin-bottom: 5px">
                     <div class="navbar-header">
-                        <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:#fff;">
-                            <a>Menu</a>
+                        <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:#fff;">                            
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
