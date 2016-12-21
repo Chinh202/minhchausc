@@ -5,6 +5,13 @@ require_once '../include/functions.php';
 if (isset($_REQUEST['add_new'])) {
     add_new();
 }
+if (isset($_GET['update'])) {
+    showProducerInfo();
+}
+if (isset($_REQUEST['updateProducer'])) {
+    pro_update();
+    redirect('../admin/producer.php');
+}
 if (isset($_GET['id_del'])) {
     delete();
 }
@@ -14,59 +21,120 @@ function add_new() {
     // $username = $_POST['username'];
     $proname = post("producer_name");
     $country = post("country");
+    $url= "../imgs/" . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
+    if (upload_image() == 'true') {
+        execute_query("INSERT INTO `producer` VALUES (NULL,'$proname','$country','$url');");
+        redirect('../admin/producer.php');
+    } else {
+        $message = upload_image();
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    }  
+    //die();
+}
+
+function upload_image() {
     $url = $_FILES["img_url"]["name"];
     $type = $_FILES['img_url']['type'];
-    echo "$url+$type";
+//    echo "$url+$type";
+//    die($_FILES['img_url']['name']);
     if ($_FILES['img_url']['name'] != NULL) { // Đã chọn file
         // Tiến hành code upload file
         if ($_FILES['img_url']['type'] == "image/jpeg" || $_FILES['img_url']['type'] == "image/png" || $_FILES['img_url']['type'] == "image/gif") {
             // là file ảnh
             // Tiến hành code upload    
             if ($_FILES['img_url']['size'] > 1048576) {
-                echo "File không được lớn hơn 1mb";
+                return "File không được lớn hơn 1mb";
             } else {
                 // file hợp lệ, tiến hành upload
                 $path = "../imgs/"; // file sẽ lưu vào thư mục data
                 $tmp_name = $_FILES['img_url']['tmp_name'];
-                $name = $_FILES['img_url']['name'];
+                $name = $path . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
                 $type = $_FILES['img_url']['type'];
                 $size = $_FILES['img_url']['size'];
                 // Upload file
-                move_uploaded_file($tmp_name, $path . $name);
-                echo "File uploaded! <br />";
-                echo "Tên file : " . $name . "<br />";
-                echo "Kiểu file : " . $type . "<br />";
-                echo "File size : " . $size;
-                execute_query("INSERT INTO `producer` VALUES (NULL,'$proname','$country','$url');");
-                redirect("../admin/producer.php");
+                move_uploaded_file($tmp_name, $name);                
+                return 'true';
             }
         } else {
             // không phải file ảnh
-            echo "Kiểu file không hợp lệ";
+            return "Kiểu file không hợp lệ";
         }
     } else {
-        echo "Vui lòng chọn file";
+        return "Vui lòng chọn file";
     }
-    //die();
 }
 
 function pro_update() {
-    $name = post("name");
-    $price = post("price");
-    $product_id = post("product_id");
-    execute_query("UPDATE `product` SET  `name`= '$name' `price` = '$price' WHERE product_id='$product_id'");
-    redirect("../pro_list");
+    $pro_name = post("producer_name");
+    $contry = post("country");
+    $producer_id = post("producer_id");
+    $url_name = "../imgs/" . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
+    if ($_FILES['img_url']['name'] == NULL) {
+        $query = "UPDATE `producer` SET  `producer_name`= '$pro_name', `country` = '$contry' WHERE producer_id='$producer_id'";
+        execute_query($query);
+    } else {
+        upload_image();
+        $query = "UPDATE `producer` SET  `producer_name`= '$pro_name', `country` = '$contry',  `img_url`='$url_name' WHERE producer_id='$producer_id'";
+        execute_query($query);
+    }
+//    $query = "SELECT * FROM `producer`";
+//    $result = execute_query($query);
+//    $stt = 0;
+//    while ($row = mysqli_fetch_assoc($result)) {
+//        $stt++;
+//        echo'<tr>';
+//        echo'<td>' . $stt . '</td>';
+//        echo'<td>' . $row["producer_name"] . '</td>';
+//        echo'<td>' . $row["country"] . '</td>';
+//        echo'<td><ul class = "enlarge">' . $row["img_url"];
+//        echo'<li><img src="../imgs/' . $row["img_url"] . '" style="width: 1.5em;" alt="anhdaidien"/><span><img src="../imgs/' . $row["img_url"] . '" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>';
+//        echo'<td><a href="#" onclick="showHint(' . $row["producer_id"] . ')" title="Sửa thông tin" data-toggle="modal" data-target="#ModalUpdate"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>';
+//        echo'<td><a href="../process/producer_fn.php?id_del=' . $row["producer_id"] . '" title="xóa thông tin" id="del" data-del="' . $row["producer_id"] . '"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>';
+//        echo'</tr>';
+//    }
+}
+
+function showProducerInfo() {
+    $idProducer = get("update");
+    $query = "SELECT * FROM `producer` where producer_id='$idProducer'";
+    $result = execute_query($query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class = "modal-header">';
+        echo '<button type = "button" class = "close" data-dismiss = "modal">&times;';
+        echo '</button>';
+        echo '<h4 class = "modal-title text-center">Thay đổi thông tin nhà sản xuất</h4>';
+        echo '</div>';
+        echo '<div class = "modal-body">';
+        echo '<div class = "form-group">';
+        echo '<label class = "col-sm-4 col-xs-4">Tên nhà sản xuất:</label>';
+        echo '<div class = "col-sm-8 col-xs-8"><input type = "text" required class = "form-control" name = "producer_name" value="' . $row["producer_name"] . '"/></div>';
+        echo '<div class = "col-sm-8 col-xs-8"><input type = "hidden"  name = "producer_id" value="' . $row["producer_id"] . '"/></div>';
+        echo '</div>';
+        echo '<div class = "form-group">';
+        echo '<label class = "col-sm-4 col-xs-4">Xuất xứ:</label>';
+        echo '<div class = "col-sm-8 col-xs-8"><input type = "text" required class = "form-control" name = "country" value="' . $row["country"] . '"/></div>';
+        echo '</div>';
+        echo '<div class = "form-group">';
+        echo '<label class = "col-sm-4 col-xs-4">Ảnh đại diện:</label>';
+        echo '<div class = "col-sm-8 col-xs-8"><input type = "file" required name = "img_url"/></div>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class = "modal-footer">';
+        echo '<button type = "submit" class = "btn btn-success" name = "updateProducer">Lưu</button>';
+        echo '<button type = "button" class = "btn btn-default" data-dismiss = "modal">Đóng</button>';
+        echo '</div>';
+    }
 }
 
 function delete() {
-    $id = get("id_del");    
+    $id = get("id_del");
     $query = "SELECT * FROM `producer` WHERE `producer_id` = '$id'";
     $result = execute_query($query);
     while ($row = mysqli_fetch_assoc($result)) {
         $file = $row["img_url"];
     }
     echo "$file";
-    $path = "../imgs/"."$file";
+    $path = "../imgs/" . "$file";
     echo "$path";
     if (file_exists($path)) {
         unlink($path);
@@ -80,7 +148,7 @@ function do_login() {
     $password = sha1(post("password"));
     $query = "SELECT * FROM `manager` WHERE `username`='$username' AND `password`='$password'";
 
-    //echo $query;	
+//echo $query;	
     $result = execute_query($query);
 
     if (mysqli_num_rows($result) == 1) {

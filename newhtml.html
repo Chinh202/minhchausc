@@ -15,7 +15,7 @@ and open the template in the editor.
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="javascript/slick.min.js" type="text/javascript"></script>  
-
+        <script src="//cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
         <style>
             .nav-tabs{
                 background-color:#161616;
@@ -37,6 +37,10 @@ and open the template in the editor.
         </style>
     </head>
     <body>
+        <textarea name="editor1"></textarea>
+        <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
         <div id="result">
             Nội dung ajax sẽ được load ở đây
         </div>
@@ -80,6 +84,7 @@ and open the template in the editor.
                 Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna.
             </div>
         </div>
+        
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.autoplay').slick({

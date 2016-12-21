@@ -1,4 +1,5 @@
-<?php include_once 'admin_header.php';
+<?php
+include_once 'admin_header.php';
 $query = "SELECT `type_id`, `type_name`, `url_img` FROM `product_type`";
 $result = execute_query($query);
 $rowpage = 15;
@@ -16,6 +17,19 @@ $rs = execute_query("$query LIMIT $offset, $rowpage");
 $stt = 0;
 $total_page = ceil($total / $rowpage);
 ?>
+<script>
+    function checkupload() {              
+            // lay dung luong va kieu file tu the input file
+            var fsize = $("#submit")[0].files[0].size;
+            var ftype = $("#submit")[0].files[0].type;
+            var fname = $("#submit")[0].files[0].name;
+
+            if (ftype =='image/png' || 'image/gif') {
+                return true;
+            }
+        return false;
+    }
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10">
@@ -37,7 +51,7 @@ $total_page = ceil($total / $rowpage);
                         <tr>
                             <td align="center"><?php echo $stt; ?></td>
                             <td><?php echo $row["type_name"]; ?></td>     
-                            <td><ul align="center" class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
+                            <td><ul align="center" class="enlarge"><?php echo $row["url_img"]; ?><li><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" style="width: 1em;" alt="anhdaidien"/><span><img src="<?php echo "../imgs/" . $row["url_img"]; ?>" alt="Ảnh" style="width:400px"/><br /></span></li></ul></td>
                             <td align="center"><a data-toggle="modal" data-target="#myModalUpdate" title="Sửa thông tin"><img src="../imgs/edit-notes.png" class="img-responsive" onclick="updateProductType(<?php echo $row["type_id"] ?>, '<?php echo $row["type_name"] ?>', '<?php echo "../imgs/" . $row["url_img"]; ?>');" style="width: 1.5em;"/></a></td>
                             <td align="center"><a href="../process/product_type_fn.php?id_del=<?php echo $row["type_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["type_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
                         </tr>
@@ -55,7 +69,7 @@ $total_page = ceil($total / $rowpage);
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <form class="form-horizontal" role="form" method="post" action="../process/product_type_fn.php?do=add_new" enctype="multipart/form-data">
+                        <form id="insert-form" accept-charset="utf-8" class="form-horizontal" role="form" method="post" action="../process/product_type_fn.php" enctype="multipart/form-data" onsubmit="return(checkupload())">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-center text-primary">Thêm mới loại sản phẩm</h4>
@@ -67,11 +81,11 @@ $total_page = ceil($total / $rowpage);
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-3 col-xs-3">Ảnh đại diện:</div>                                  
-                                    <div class="col-sm-9 col-xs-9"><input type="file" required name="url_img"/></div>
+                                    <div class="col-sm-9 col-xs-9"><input id="submit" type="file" required name="img_url"/></div>
                                 </div>                                                                                              
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="add_new">Thêm</button>
+                                <input type="submit" class="btn btn-success" name="add_new" value="Thêm"/>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                             </div>
                         </form>
@@ -85,7 +99,7 @@ $total_page = ceil($total / $rowpage);
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <form id="formUpdate" class="form-horizontal" role="form" method="post" action="../process/product_type_fn.php?id_upd=" enctype="multipart/form-data">
+                        <form id="formUpdate" accept-charset="utf-8" class="form-horizontal" role="form" method="post" action="../process/product_type_fn.php?id_upd=" enctype="multipart/form-data">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-center text-primary">Cập nhật loại sản phẩm</h4>
@@ -97,7 +111,7 @@ $total_page = ceil($total / $rowpage);
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-3 col-xs-3">Ảnh đại diện:</div>                               
-                                    <div class="col-sm-6 col-xs-6"><input type="file" name="url_img"/></div>
+                                    <div class="col-sm-6 col-xs-6"><input type="file" name="img_url"/></div>
                                     <ul align="center" class="enlarge col-sm-3 col-xs-3">
                                         <li>
                                             <img id="oldImgSM" src="" style="width: 4em;" alt="anhdaidien"/>

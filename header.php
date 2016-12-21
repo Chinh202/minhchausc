@@ -81,76 +81,72 @@
                 </div>
 
             </div>
-            <div class="container">
-                <div class="navbar navbar-default" style="background-color: #d71921;margin-bottom: 5px">
-                    <div class="navbar-header">
-                        <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:#fff;">                            
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>                            
+            <div class="container">               
+                        <div class="navbar navbar-default" style="background-color: #d71921;margin-bottom: 5px">
+                            <div class="navbar-header">
+                                <button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:#fff;">                            
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>                            
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="http://localhost:82/MinhChauSC/index.php">TRANG CHỦ</a></li>
+                                    <li class="dropdown"><a href="#bootstrap" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span class="caret"></span></a>
+                                        <div class="dropdown-menu col-lg-12">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Giới thiệu về Hikvision</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Giới thiệu về MinhChauSC</a></li>
+                                            </ul>
+                                        </div>                                
+                                    </li>
+                                    <li class="dropdown"><a href="http://localhost:82/MinhChauSC/product/pr_hikvision.php" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <span class="caret"></span></a>
+                                        <div class="dropdown-menu col-lg-12">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Camera Hikvision</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Báo cháy</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Kiểm soát vào ra</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Báo giờ</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Báo động</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Điện thoại gọi cửa có hình</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Khóa điện</a></li>
+                                            </ul>
+                                        </div>                                
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">HỖ TRỢ <span class="caret"></span></a>
+                                        <div class="dropdown-menu col-lg-12">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-angle-right" ></i>Giải pháp</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Khuyến cáo</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Hướng dẫn sử dụng</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Video hướng dẫn</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Câu hỏi thường gặp</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Khái niệm cơ bản</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">DOWNLOAD <span class="caret"></span></a>
+                                        <div class="dropdown-menu col-lg-12">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-angle-right" ></i>Firmware</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Client Software</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>SDK</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Tools</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-right"></i>Phần mềm hỗ trợ từ xa</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#sass">Dịch vụ </a></li>
+                                    <li><a href="#sass">Tin tức</a></li>
+                                    <li><a href="#sass">Xem Demo</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="http://localhost:82/MinhChauSC/index.php">TRANG CHỦ</a></li>
-                            <li class="dropdown"><a href="#bootstrap" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span class="caret"></span></a>
-                                <div class="dropdown-menu col-lg-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Giới thiệu về Hikvision</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Giới thiệu về MinhChauSC</a></li>
-                                    </ul>
-                                </div>                                
-                            </li>
-                            <li class="dropdown"><a href="http://localhost:82/MinhChauSC/product/pr_hikvision.php" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <span class="caret"></span></a>
-                                <div class="dropdown-menu col-lg-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Camera Hikvision</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Báo cháy</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Kiểm soát vào ra</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Báo giờ</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Báo động</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Điện thoại gọi cửa có hình</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Khóa điện</a></li>
-                                    </ul>
-                                </div>                                
-                            </li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">HỖ TRỢ <span class="caret"></span></a>
-                                <div class="dropdown-menu col-lg-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right" ></i>Giải pháp</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Khuyến cáo</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Hướng dẫn sử dụng</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Video hướng dẫn</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Câu hỏi thường gặp</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Khái niệm cơ bản</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">DOWNLOAD <span class="caret"></span></a>
-                                <div class="dropdown-menu col-lg-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right" ></i>Firmware</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Client Software</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>SDK</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Tools</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Phần mềm hỗ trợ từ xa</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="#sass">Dịch vụ </a></li>
-                            <li><a href="#sass">Tin tức</a></li>
-                            <li><a href="#sass">Xem Demo</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                </div>            
+
 <!--                <img src="imgs/product-page-cover.png" alt="banner" class="img-responsive"/>-->    
-            <div class="container slider-home">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <?php include_once 'slider_content.php'; ?>
-                    </div>
-                </div>
-            </div>
+
             <div class="container" id="main-content">
 

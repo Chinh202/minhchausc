@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: text/html; charset=utf-8");
 include_once '../include/functions.php';
 include_once '../include/config.php';
 ?>
@@ -18,6 +19,7 @@ include_once '../include/config.php';
         <!--        <link href="../css/home.css" rel="stylesheet" type="text/css"/>-->
         <script src="../javascript/jquery.js" type="text/javascript"></script>
         <script src="../javascript/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../ckeditor/ckeditor.js" type="text/javascript"></script>
         <script src="../javascript/nav-js.js" type="text/javascript"></script> 
         <script src="../javascript/sb-admin-2.js" type="text/javascript"></script>
         <script src="../javascript/metisMenu.js" type="text/javascript"></script>
