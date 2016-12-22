@@ -74,7 +74,7 @@ $result_spt = execute_query($sql);
                                 <td><?php echo $stt; ?></td>
                                 <td><?php echo $row["specifications_name"]; ?></td>                                             
                                 <td><?php echo $row["type_name"]; ?></td>                                             
-                                <td><a href="#" title="Sửa thông tin" onclick="update();"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
+                                <td><a href="#" title="Sửa thông tin" onclick="load_ajax(<?php echo $row["specifications_id"]?>)" data-toggle="modal" data-target="#ModalUpdate"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
                                 <td><a href="../process/specifications_fn.php?id_del=<?php echo $row["specifications_id"]; ?>&page=<?php echo $n ?>" title="xóa thông tin" id="del"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
                             </tr>
                             <?php
@@ -126,8 +126,7 @@ $result_spt = execute_query($sql);
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title text-center" id="title">Thêm Mới Thông Số Kỹ Thuật</h4>
                             </div>
-                            <div class="modal-body">
-                                <input name="specifications_id" value="" style="visibility: hidden"/>
+                            <div class="modal-body">                                
                                 <div class="form-group">                                    
                                     <div class="col-sm-3 col-xs-3">Loại thông số :</div>
                                     <div class="col-sm-9 col-xs-9">
@@ -159,34 +158,7 @@ $result_spt = execute_query($sql);
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <form id="sp-form" class="form-horizontal" role="form" method="post" action="../process/specifications_fn.php" enctype="multipart/form-data" name="add_new">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-center" id="title">Thêm Mới Thông Số Kỹ Thuật</h4>
-                            </div>
-                            <div class="modal-body">
-                                <input name="specifications_id" value="" style="visibility: hidden"/>
-                                <div class="form-group">                                    
-                                    <div class="col-sm-3 col-xs-3">Loại thông số :</div>
-                                    <div class="col-sm-9 col-xs-9">
-                                        <select>
-                                            <?php
-                                            while ($row_spt = mysqli_fetch_assoc($result_spt)) {
-                                                ?>
-                                                <option value="<?php echo $row_spt["type_id"]; ?>"><?php echo $row_spt["type_name"]; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>                                    
-                                </div>
-                                <div class="form-group">                                    
-                                    <div class="col-sm-3 col-xs-3">Tên thông số :</div>
-                                    <div class="col-sm-9 col-xs-9"><input type="text" required class="form-control" name="specifications_name" id="sp"/></div>                                    
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" onclick="submit_ajax();" data-dismiss="modal">Thêm</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                            </div>
+                        <form id="sp-form" class="form-horizontal" role="form" method="post" action="../process/specifications_fn.php" enctype="multipart/form-data" name="update">                            
                         </form>
                     </div>
                 </div>

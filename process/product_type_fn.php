@@ -5,7 +5,7 @@ require_once '../include/functions.php';
 if (isset($_REQUEST['add_new'])) {
     add_new();
 }
-if (isset($_GET['id_upd'])) {
+if (isset($_POST['update'])) {
     update();
 }
 if (isset($_GET['id_del'])) {
@@ -57,15 +57,17 @@ function upload_image() {
 }
 
 function update() {
-    $type_id = get("id_upd");
+    $type_id = post("type_id");
     $type_name = post("type_name");
     $type_img = iconv("utf-8", "cp936", $_FILES['img_url']['name']);
     if ($type_img == NULL) {
         execute_query("UPDATE `product_type` SET  `type_name`= '$type_name' WHERE type_id='$type_id'");
+        redirect("../admin/product_type_list.php");
     } else {
-        $url = "../imgs/" . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
+        $url_img = "../imgs/" . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
         if (upload_image() == 'true') {
-            execute_query("UPDATE `product_type` SET  `type_name`= '$type_name', `url_img`='$url_img' WHERE type_id='$type_id'");
+            $query="UPDATE `product_type` SET  `type_name`= '$type_name', `url_img`='$url_img' WHERE type_id='$type_id'";            
+            execute_query($query);
             redirect("../admin/product_type_list.php");
         } else {
             $message = upload_image();
@@ -76,8 +78,7 @@ function update() {
 }
 
 function delete() {
-    $id = get("id_del");
-    deleteImg($id);
+    $id = get("id_del");  
     execute_query("DELETE FROM `product_type` WHERE `type_id` = '$id'");
     redirect("../admin/product_type_list.php");
 }

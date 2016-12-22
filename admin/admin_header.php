@@ -51,7 +51,12 @@ include_once '../include/config.php';
                                 </ul>
                             </li>
                             <li><a href="producer.php">Hãng sản xuất</a></li>
-                            <li><a href="specifications.php">Các thông số kỹ thuật</a></li>
+                            <li><a href="specifications.php">Các thông số kỹ thuật <span class="caret"></span></a>
+                                <ul class="nav nav-second-level" id="menuProduct">
+                                    <li><a href="specification_type.php">Loại thông số</a></li>
+                                    <li><a href="specifications.php">Thông số kỹ thuật</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Bài Viết</a></li>                            
                             <li><a href="#">Thông tin Admin</a></li>                            
                         </ul>

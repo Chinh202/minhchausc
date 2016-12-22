@@ -12,7 +12,7 @@ if (isset($_GET['id_del'])) {
     delete();
 }
 if (isset($_GET['idUpdate'])) {
-    delete();
+    showProducerInfo();
 }
 
 function add_new() {
@@ -24,43 +24,48 @@ function add_new() {
     execute_query("INSERT INTO `specifications` VALUES (NULL,'$specifications_name','$type_id');");
     redirect("../admin/specifications.php");
 }
+
 function showProducerInfo() {
-    $idProducer = get("update");
-    $query = "SELECT * FROM `specifications` where producer_id='$idProducer'";
-    $result = execute_query($query);
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<div class = "modal-header">';
-        echo '<button type = "button" class = "close" data-dismiss = "modal">&times;';
-        echo '</button>';
-        echo '<h4 class = "modal-title text-center">Thay đổi thông tin nhà sản xuất</h4>';
-        echo '</div>';
-        echo '<div class = "modal-body">';
-        echo '<div class = "form-group">';
-        echo '<label class = "col-sm-4 col-xs-4">Tên nhà sản xuất:</label>';
-        echo '<div class = "col-sm-8 col-xs-8"><input type = "text" required class = "form-control" name = "producer_name" value="' . $row["producer_name"] . '"/></div>';
-        echo '<div class = "col-sm-8 col-xs-8"><input type = "hidden"  name = "producer_id" value="' . $row["producer_id"] . '"/></div>';
-        echo '</div>';
-        echo '<div class = "form-group">';
-        echo '<label class = "col-sm-4 col-xs-4">Xuất xứ:</label>';
-        echo '<div class = "col-sm-8 col-xs-8"><input type = "text" required class = "form-control" name = "country" value="' . $row["country"] . '"/></div>';
-        echo '</div>';
-        echo '<div class = "form-group">';
-        echo '<label class = "col-sm-4 col-xs-4">Ảnh đại diện:</label>';
-        echo '<div class = "col-sm-8 col-xs-8"><input type = "file" required name = "img_url"/></div>';
-        echo '</div>';
-        echo '</div>';
-        echo '<div class = "modal-footer">';
-        echo '<button type = "submit" class = "btn btn-success" name = "updateProducer">Lưu</button>';
-        echo '<button type = "button" class = "btn btn-default" data-dismiss = "modal">Đóng</button>';
-        echo '</div>';
+    $specifications_id = get("idUpdate");
+    $query = "SELECT `specifications_id`,`specifications_name`,`type_id` FROM `specifications` where `specifications_id`='$specifications_id'";
+    $result = execute_query($query);   
+    $query1 = "SELECT * FROM `specification_type`";
+    $result1 = execute_query($query1);
+    while ($row = mysqli_fetch_assoc($result)) {        
+        echo '<div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center" id="title">Thay Đổi Thông Tin Kỹ Thuật</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input name="specifications_id" value="' . $row["specifications_id"] . '" type="hidden"/>
+                                <div class="form-group">                                    
+                                    <div class="col-sm-3 col-xs-3">Loại thông số :</div>
+                                    <div class="col-sm-9 col-xs-9">
+                                        <select name="type_id" class="form-control">';
+        while ($row1 = mysqli_fetch_assoc($result1)) {
+            echo '<option value="' . $row1["type_id"] . '"';
+            echo $row["type_id"] == $row1["type_id"] ? "selected" : "";
+            echo '>' . $row1["type_name"] . '</option>';
+        }
+        echo '</select></div></div>
+                                <div class="form-group">                                    
+                                    <div class="col-sm-3 col-xs-3">Tên thông số :</div>
+                                    <div class="col-sm-9 col-xs-9"><input type="text" required class="form-control" name="specifications_name" id="sp" value="' . $row["specifications_name"] . '"/></div>                                    
+                                </div> 
+                                </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" name="update">Lưu</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            </div>';
     }
 }
+
 function update() {
-    $id = post("id_update");
+    $id = post("specifications_id");
     $specifications_name = post("specifications_name");
     $type_id = post("type_id");
-    execute_query("UPDATE `specifications` SET  `specifications_name`= '$specifications_name' `type_id` = '$type_id' WHERE specifications_id='$id'");
-    redirect("../specifications.php");
+    execute_query("UPDATE `specifications` SET  `specifications_name`= '$specifications_name', `type_id` = '$type_id' WHERE specifications_id='$id'");
+    redirect("../admin/specifications.php");
 }
 
 function delete() {
