@@ -23,11 +23,12 @@ function add_new() {
     $product_name = post("product_name");
     $product_price = post("product_price");
     $type_id = post("type_id");
+    $product_line_id = post("product_line_id");
     $producer_id = post("producer_id");
     $img_url = "../imgs/" . iconv("utf-8", "cp936", $_FILES['img_url']['name']);
 
     if (upload_image() == 'true') {
-        $result = execute_query("INSERT INTO `product` VALUES (NULL,'$product_code','$product_name','$product_price','$type_id','$producer_id','$img_url');");
+        $result = execute_query("INSERT INTO `product` VALUES (NULL,'$product_code','$product_name','$product_price','$type_id','$product_line_id','$producer_id','$img_url');");
         if ($result) {
             insert_product_details();
             redirect('../admin/product_list.php');
@@ -105,10 +106,11 @@ function pro_update() {
     $product_name = post("product_name");
     $product_price = post("product_price");
     $type_id = post("type_id");
+    $product_line_id = post("product_line_id");
     $producer_id = post("producer_id");
     
     if ($_FILES['img_url']['name'] == NULL) {
-        $query = "UPDATE `product` SET  `product_code`= '$product_code', `product_name` = '$product_name', `product_price` = '$product_price', `type_id` = '$type_id', `producer_id` = '$producer_id' WHERE product_id='$product_id'";
+        $query = "UPDATE `product` SET  `product_code`= '$product_code', `product_name` = '$product_name', `product_price` = '$product_price', `type_id` = '$type_id',`product_line_id`=$product_line_id, `producer_id` = '$producer_id' WHERE product_id='$product_id'";
 //        die(iconv("utf-8", "cp936",$query));
         execute_query($query);
     } else {
@@ -143,11 +145,12 @@ function showProducerInfo() {
     $query3 = "SELECT * FROM `producer`";
     $query4 = "SELECT * FROM `specification_type`";
     $query5 = "SELECT * FROM `view_product_details` where product_id='$idProduct'";
-
+    $query6 = "SELECT * FROM `product_lines`";
     $result2 = execute_query($query2);
     $result3 = execute_query($query3);
     $result4 = execute_query($query4);
     $result5 = execute_query($query5);
+    $result6 = execute_query($query6);
     $result = execute_query($query);
     while ($row = mysqli_fetch_assoc($result)) {
         echo '
@@ -196,6 +199,20 @@ function showProducerInfo() {
         }
         echo
         '</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3">Dòng sản phẩm:</div>                                     
+                            <div class="col-sm-9 col-xs-9">
+                                <select name="product_line_id" class="col-sm-4 col-xs-4 form-control">';    
+                                    while ($row6 = mysqli_fetch_assoc($result6)) {
+                                       echo '<option value="'.$row6['product_line_id'].'"';
+                                       echo $row6["product_line_id"] == $row["product_line_id"] ? "selected" : "";
+                                       echo '>'.
+                                            $row6['product_line_name'].'
+                                        </option>';
+                                    }
+                              echo  '</select>
                             </div>
                         </div>
                         <div class="form-group">

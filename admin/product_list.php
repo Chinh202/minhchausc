@@ -4,11 +4,12 @@ $query1 = "SELECT * from `view_product`";
 $query2 = "SELECT * FROM `product_type`";
 $query3 = "SELECT * FROM `producer`";
 $query4 = "SELECT * FROM `specification_type`";
-$query5 = "SELECT * FROM `specifications`";
+$query5 = "SELECT * FROM `product_lines`";
 $result1 = execute_query($query1);
 $result2 = execute_query($query2);
 $result3 = execute_query($query3);
 $result4 = execute_query($query4);
+$result5 = execute_query($query5);
 $rowpage = 15;
 $n = get("page");
 if (!get("page")) {
@@ -33,9 +34,10 @@ $total_page = ceil($total / $rowpage);
                 <thead>
                 <th>STT</th>               
                 <th>Tên Sản Phẩm</th>
-                <th>Giá Sản Phẩm</th>
-                <th>Loại</th>
-                <th>Nhà Sản Xuất</th>                
+                <th>Giá SP</th>
+                <th>Loại SP</th>
+                <th>Dòng SP</th>
+                <th>Nhà SX</th>                
                 <th>Ảnh</th>
                 <th></th>
                 <th></th>
@@ -51,10 +53,11 @@ $total_page = ceil($total / $rowpage);
                             <td style="vertical-align: middle"><?php echo $row["product_name"]; ?></td>
                             <td style="vertical-align: middle"><?php echo number_format($row["product_price"]); ?></td>
                             <td style="vertical-align: middle"><?php echo $row["type_name"]; ?></td>
+                            <td style="vertical-align: middle"><?php echo $row["product_line_name"]; ?></td>
                             <td style="vertical-align: middle"><?php echo $row["producer_name"]; ?></td>                                  
                             <td style="vertical-align: middle"><ul class="enlarge"><?php echo $row["img_url"]; ?><li><img src="<?php echo $row["img_url"]; ?>" style="width: 1.5em;" alt="anhdaidien"/><span><img src="<?php echo $row["img_url"]; ?>" alt="Deckchairs" style="width:400px"/><br /></span></li></ul></td>
                             <td style="width: 30px;vertical-align: middle"><a href="#" onclick="showHint(<?php echo $row["product_id"]; ?>)" title="Sửa thông tin" data-toggle="modal" data-target="#myModalUpdate"><img src="../imgs/edit-notes.png" class="img-responsive" style="width: 1.5em;"/></a></td>
-                            <td style="width: 30px;vertical-align: middle"><a href="../process/product_fn.php?id_del=<?php echo $row["product_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["producer_id"] ?>"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
+                            <td style="width: 30px;vertical-align: middle"><a href="../process/product_fn.php?id_del=<?php echo $row["product_id"]; ?>" title="xóa thông tin" id="del" data-del="<?php echo $row["producer_id"] ?>" onclick="deletepro()"><img src="../imgs/Delete-icon.png" class="img-responsive" style="width: 1.2em;"/></a></td>
                         </tr>
                         <?php
                     }
@@ -90,7 +93,7 @@ $total_page = ceil($total / $rowpage);
                         </div>
                         <div class="form-group">
                             <div class="col-sm-3 col-xs-3">Giá sản phẩm:</div>
-                            <div class="col-sm-9 col-xs-9"><input id="pro-price" type="text" required class="form-control" name="product_price"/></div>
+                            <div class="col-sm-9 col-xs-9"><input id="pro-price" type="number" required class="form-control" name="product_price"/></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-3 col-xs-3">Loại sản phẩm:</div>                                         
@@ -111,6 +114,18 @@ $total_page = ceil($total / $rowpage);
                                     <?php while ($row3 = mysqli_fetch_assoc($result3)) { ?>
                                         <option value="<?php echo $row3['producer_id'] ?>">
                                             <?php echo $row3['producer_name'] ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 col-xs-3">Dòng sản phẩm:</div>                                     
+                            <div class="col-sm-9 col-xs-9">
+                                <select name="product_line_id" class="col-sm-4 col-xs-4 form-control">    
+                                    <?php while ($row5 = mysqli_fetch_assoc($result5)) { ?>
+                                        <option value="<?php echo $row5['product_line_id'] ?>">
+                                            <?php echo $row5['product_line_name'] ?>
                                         </option>
                                     <?php } ?>
                                 </select>
@@ -155,7 +170,7 @@ $total_page = ceil($total / $rowpage);
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success" name="add_new">Thêm</button>
-                        <button type="reset" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        <button type="reset" class="btn btn-default" data-dismiss="modal" onclick="clearform()">Đóng</button>
                     </div>
                 </form>
             </div>
@@ -204,6 +219,9 @@ $total_page = ceil($total / $rowpage);
             $(el).parent().parent().remove();
         }
     }
+    function deletepro() {
+        return (confirm('Bạn có chắc muốn xóa sản phẩm ?')) ;
+    }
     function load_sp() {
         var id_sp = $('#sp_type').val();
         $.ajax({
@@ -215,12 +233,12 @@ $total_page = ceil($total / $rowpage);
             }
         });
     }
-//    function clearform() {
-//        $('#bd-sp').empty();
-//        $('#pro-code').val('');
-//        $('#pro-name').val('');
-//        $('#pro-price').val('');                
-//    }
+    function clearform() {
+        $('#bd-sp').empty();
+        $('#pro-code').val('');
+        $('#pro-name').val('');
+        $('#pro-price').val('');                
+    }
     function showHint(IdUpdate) {
         if (IdUpdate.length == 0) {
             document.getElementById("pro-form-update").innerHTML = "";

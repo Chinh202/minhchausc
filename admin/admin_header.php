@@ -47,6 +47,7 @@ include_once '../include/config.php';
                             <li><a href="#" data-toggle="collapse" data-target="#menuProduct" >Sản Phẩm <span class="caret"></span></a>
                                 <ul class="nav nav-second-level" id="menuProduct">
                                     <li><a href="product_type_list.php">Loại sản phẩm</a></li>
+                                    <li><a href="product_line.php">Dòng sản phẩm</a></li>
                                     <li><a href="product_list.php">Danh sách sản phẩm</a></li>
                                 </ul>
                             </li>
